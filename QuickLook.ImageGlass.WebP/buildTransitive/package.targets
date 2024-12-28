@@ -1,0 +1,16 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<WebPName>QuickLook.ImageGlass.WebP.dll</WebPName>
+	</PropertyGroup>
+
+	<Target Name="CopyNativeDlls" AfterTargets="AfterCompile">
+		<ItemGroup>
+			<NativeDlls Include="$(MSBuildThisFileDirectory)..\lib\net462\x64\libwebp.dll" />
+			<NativeDlls Include="$(MSBuildThisFileDirectory)..\lib\net462\x64\libsharpyuv.dll" />
+			<NativeDlls Include="$(MSBuildThisFileDirectory)..\lib\net462\x64\libwebpdecoder.dll" />
+			<NativeDlls Include="$(MSBuildThisFileDirectory)..\lib\net462\x64\libwebpdemux.dll" />
+		</ItemGroup>
+
+		<Copy SourceFiles="@(NativeDlls)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="True" />
+	</Target>
+</Project>

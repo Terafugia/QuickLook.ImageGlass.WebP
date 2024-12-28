@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net462</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <LangVersion>latest</LangVersion>
+        <RestoreSources>$(RestoreSources);..\QuickLook.ImageGlass.WebP\bin\Debug\</RestoreSources>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="aa9c1debc03862d07e787f4dcb54ae71.webp">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="QuickLook.ImageGlass.WebP" Version="1.4.0">
+            <Source>..\QuickLook.ImageGlass.WebP\bin\Debug\</Source>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>

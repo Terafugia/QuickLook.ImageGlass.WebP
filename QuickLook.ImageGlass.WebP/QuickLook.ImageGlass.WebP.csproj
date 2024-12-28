@@ -1,0 +1,105 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFrameworks>net462</TargetFrameworks>
+        <UseWindowsForms>true</UseWindowsForms>
+        <UseWPF>true</UseWPF>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Configurations>Debug;Release;Publish_Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+        <Version>1.4.0</Version>
+        <FileVersion>$(Version)</FileVersion>
+        <Copyright>Copyright © 2010 - 2025 Duong Dieu Phap</Copyright>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <Authors>ImageGlass Project</Authors>
+        <Company>QL-Win</Company>
+        <Title>QuickLook.ImageGlass.WebP</Title>
+        <PackageId>QuickLook.ImageGlass.WebP</PackageId>
+        <Product>QuickLook.ImageGlass.WebP</Product>
+        <Description>This is a part of the QuickLook program, migrated from ImageGlass.</Description>
+        <PackageProjectUrl>https://github.com/QL-Win/QuickLook.ImageGlass.WebP</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/QL-Win/QuickLook.ImageGlass.WebP</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>libwebp QuickLook ImageGlass</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>app.png</PackageIcon>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="app.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </Content>
+
+        <None Include="..\README.md" Pack="true" PackagePath="" />
+        <None Remove="app.png" />
+
+        <None Include="build\package.targets" Pack="True" PackagePath="\build\$(PackageId).targets" />
+        <None Include="build\package.props" Pack="True" PackagePath="\build\$(PackageId).props" />
+        <None Include="buildTransitive\package.targets" Pack="True" PackagePath="\buildTransitive\$(PackageId).targets" />
+        <None Include="buildTransitive\package.props" Pack="True" PackagePath="\buildTransitive\$(PackageId).props" />
+
+    </ItemGroup>
+
+    <ItemGroup>
+		<Content Include="..\ImageGlass\Source\Libs\libwebp\x64\libwebp.dll">
+            <Pack>true</Pack>
+            <PackagePath>lib\net462\x64\libwebp.dll</PackagePath>
+        </Content>
+        <None Include="..\ImageGlass\Source\Libs\libwebp\x64\libwebp.dll" />
+
+		<Content Include="..\ImageGlass\Source\Libs\libwebp\x64\libsharpyuv.dll">
+            <Pack>true</Pack>
+            <PackagePath>lib\net462\x64\libsharpyuv.dll</PackagePath>
+        </Content>
+        <None Include="..\ImageGlass\Source\Libs\libwebp\x64\libsharpyuv.dll" />
+
+		<Content Include="..\ImageGlass\Source\Libs\libwebp\x64\libwebpdecoder.dll">
+            <Pack>true</Pack>
+            <PackagePath>lib\net462\x64\libwebpdecoder.dll</PackagePath>
+        </Content>
+        <None Include="..\ImageGlass\Source\Libs\libwebp\x64\libwebpdecoder.dll" />
+
+		<Content Include="..\ImageGlass\Source\Libs\libwebp\x64\libwebpdemux.dll">
+            <Pack>true</Pack>
+            <PackagePath>lib\net462\x64\libwebpdemux.dll</PackagePath>
+        </Content>
+        <None Include="..\ImageGlass\Source\Libs\libwebp\x64\libwebpdemux.dll" />
+
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="..\ImageGlass\Source\Components\ImageGlass.WebP\Enums.cs">
+            <Link>Enums.cs</Link>
+        </Compile>
+        <Compile Include="..\ImageGlass\Source\Components\ImageGlass.WebP\libwebp.cs">
+            <Link>libwebp.cs</Link>
+        </Compile>
+        <Compile Include="..\ImageGlass\Source\Components\ImageGlass.WebP\libwebpdemux.cs">
+            <Link>libwebpdemux.cs</Link>
+        </Compile>
+        <Compile Include="..\ImageGlass\Source\Components\ImageGlass.WebP\Structs.cs">
+            <Link>Structs.cs</Link>
+        </Compile>
+        <Compile Include="..\ImageGlass\Source\Components\ImageGlass.WebP\UnsafeNativeMethods.cs">
+            <Link>UnsafeNativeMethods.cs</Link>
+        </Compile>
+        <Compile Include="..\ImageGlass\Source\Components\ImageGlass.WebP\WebPWrapper.cs">
+            <Link>WebPWrapper.cs</Link>
+        </Compile>
+		<Compile Include="..\ImageGlass\Source\Components\ImageGlass.Base\Photoing\Codecs\AnimatedImg.cs">
+			<Link>AnimatedImg.cs</Link>
+		</Compile>
+		<Compile Include="..\ImageGlass\Source\Components\ImageGlass.Base\Photoing\Codecs\AnimatedImgFrame.cs">
+			<Link>AnimatedImgFrame.cs</Link>
+		</Compile>
+
+    </ItemGroup>
+
+</Project>
